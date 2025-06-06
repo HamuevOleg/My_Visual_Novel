@@ -24,7 +24,29 @@ To start the game, run the `Lwjgl3Launcher` file:
 ```bash
 ./gradlew lwjgl3:run
 ```
+### 🏗️ Project Architecture
+## Core Classes
 
+```
+Main – Main application class where execution begins. Initializes the game and sets initial parameters.
+Lwjgl3Launcher – Entry point for desktop version using Lwjgl3. Configures window parameters and desktop-specific settings.
+StartupHelper – Helper class responsible for resource preloading, initial setup and environment preparation before launching the main screen.
+```
+## Game Screens
+
+```
+GameScreen – Main game screen where scenes, dialogs, choices and animations are displayed. Manages rendering logic and user input processing during gameplay.
+MainMenuScreen – Main menu screen where users start interacting with the game. Implements UI elements for starting new game, continuing and exiting.
+```
+
+## Story Management
+
+```
+StoryManager – Management class responsible for scene transitions logic, story choice processing and current story state management.
+StoryScene – Represents individual visual novel scene. Contains dialog lines list, available choices and other information related to specific story episode.
+DialogLine – Model representing single character or narrator line. May include text, speaker name, emotions or other parameters affecting display.
+StoryChoice – Class describing choice options provided to player. Each choice can lead to new scene or affect story development.
+```
 ## System Requirements
 - **Java 23** or higher (required)
 - At least 512MB RAM
