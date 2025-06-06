@@ -1,0 +1,17 @@
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+eclipse.project.name = appName + '-core'
+
+dependencies {
+  api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+  api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  api "com.bladecoder.ink:blade-ink:$bladeInkVersion"
+  api "com.crashinvaders.lml:gdx-autumn-mvc:$lmlVersion"
+  api "com.crashinvaders.lml:gdx-autumn:$lmlVersion"
+  api "com.crashinvaders.lml:gdx-kiwi:$lmlVersion"
+  api "com.crashinvaders.lml:gdx-lml:$lmlVersion"
+  api "com.github.tommyettinger:anim8-gdx:$anim8Version"
+  api "org.apache.commons:commons-collections4:$commonsCollectionsVersion"
+  if(enableGraalNative == 'true') {
+    implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
+  }
+}
